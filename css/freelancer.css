@@ -37,7 +37,8 @@ h6 {
 }
 
 h2 {
-    padding-bottom: 35px; 
+    padding-bottom: 35px;
+    font-size: 10vw; 
 }
 
 hr.star-light,
@@ -118,7 +119,7 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     header .container {
-        padding-top: 200px;
+        padding-top: 100px;
         padding-bottom: 100px;
     }
 
@@ -530,4 +531,51 @@ footer .footer-below {
 .btn-dark:active {
     color: #fff;
     background-color: #00676d;
+}
+
+.nbox > span {
+    display: block;
+}
+
+.n {
+    color: #ffc60a;
+    font-size: 4em;
+    font-weight: 500;
+}
+
+.l {
+    background-color: #ffc60a;
+    font-size: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.clabel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9e8162;
+    font-size: 2em;
+}
+
+.countdown > div {
+    display: inline-block;
+}
+
+@media (max-width:450px){
+    .l, .clabel {
+        font-size: 1.5em;
+        }
+    .n {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 767px) {
+  .col-sm-6 {
+    width: 40%;
+  }
+  .sponsor, .sponsor > div {
+    text-align: center;
+    display: inline-block;
+  }
 }
