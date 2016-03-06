@@ -4,6 +4,29 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+@keyframes aniOne {
+    from {
+        background-position: 0 -125px, 100% 135%, 0 0;
+    }
+    to {
+        background-position: 0 145%, 100% -35%, 112px 112px;
+    }
+}
+@keyframes aniTwo {
+    from {
+        background-position: 100px 100px, 90% 95%, 0 0;
+        background-position: 100px 100px, -webkit-calc(100% - 100px) -webkit-calc(100% - 50px), 0 0;
+        background-position: 100px 100px, -moz-calc(100% - 100px) -moz-calc(100% - 50px), 0 0;
+        background-position: 100px 100px, calc(100% - 100px) calc(100% - 50px), 0 0;
+    }
+    to {
+        background-position: 100px 90%, 90% 110%, 112px 112px;
+        background-position: 100px -webkit-calc(100% - 25px), -webkit-calc(100% - 100px) -webkit-calc(0% + 100px), 112px 112px;
+        background-position: 100px -moz-calc(100% - 25px), -moz-calc(100% - 100px) -moz-calc(0% + 100px), 112px 112px;
+        background-position: 100px calc(100% - 25px), calc(100% - 100px) calc(0% + 100px), 112px 112px;
+    }
+}
+
 body {
     overflow-x: hidden;
 }
@@ -37,7 +60,8 @@ h6 {
 }
 
 h2 {
-    padding-bottom: 35px; 
+    padding-bottom: 35px;
+    font-size: 10vw; 
 }
 
 hr.star-light,
@@ -83,22 +107,47 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
+.header-img {
+    width: 100%;
+    max-width: 750px;
+}
+
+.head {
+    overflow: hidden;
+}
+
 header {
     text-align: center;
     color: #fff;
     background: #fff;
-    background-image: url("../img/adbg.svg");
-    background-repeat: repeat;
+    background-image: url("../img/gdg1.png"), url("../img/gdg2.png"), url("../img/adbg.svg");
+    background-position: left top, right bottom, center bottom;
+    background-repeat: no-repeat, no-repeat, repeat;
+
+    animation: aniOne 3s steps(6000) infinite alternate-reverse;
+    -webkit-animation: aniOne 3s steps(6000) infinite alternate-reverse;
+    -moz-animation: aniOne 3s steps(6000) infinite alternate-reverse;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-timing-function: ease-in-out;
+}
+
+@media(min-width: 1300px){
+    header {
+        background-position: 100px top, 100% bottom, center bottom;
+
+        animation: aniTwo 2s steps(6000) infinite alternate-reverse;
+        -webkit-animation: aniTwo 2s steps(6000) infinite alternate-reverse;
+        -moz-animation: aniTwo 2s steps(6000) infinite alternate-reverse;
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+        -moz-animation-timing-function: ease-in-out;
+    }
 }
 
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
-}
-
-header img {
-    display: block;
-    margin: 0 auto 20px;
 }
 
 header .intro-text .name {
@@ -118,7 +167,7 @@ header .intro-text .skills {
 
 @media(min-width:768px) {
     header .container {
-        padding-top: 200px;
+        padding-top: 100px;
         padding-bottom: 100px;
     }
 
@@ -198,8 +247,14 @@ section.success {
     background: #59c8ce;
 }
 
+section.tl {
+    color: #FFF;
+}
 section.sponsor {
     color: #00919a;
+}
+h2.sponsor{
+    color: #59c8ce;
 }
 
 section.local {
@@ -228,6 +283,15 @@ section.success a.active {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+}
+
+.sponsor-img {
+
+}
+
+.sponsor-box {
+    display: inline-block;
+    padding: 1em;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -530,4 +594,60 @@ footer .footer-below {
 .btn-dark:active {
     color: #fff;
     background-color: #00676d;
+}
+
+.nbox > span {
+    display: block;
+}
+
+.n {
+    color: #ffc60a;
+    font-size: 4em;
+    font-weight: 500;
+}
+
+.l {
+    background-color: #ffc60a;
+    font-size: 2em;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.clabel {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #9e8162;
+    font-size: 2em;
+}
+
+.countdown > div {
+    display: inline-block;
+}
+
+@media (max-width:450px){
+    .l, .clabel {
+        font-size: 1.5em;
+        }
+    .n {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 767px) {
+  .col-sm-6 {
+    width: 40%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .sponsor, .sponsor > div {
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 590px){
+    .sponsor-img {
+        width: 22vmax;
+    }
 }
